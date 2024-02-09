@@ -1,0 +1,61 @@
+.titulo-form {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.form-add-nova-nota {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-nova-nota-campos {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2rem;
+    background-color: #332941;
+    border-radius: 7.15px;
+}
+
+.nota-campo-titulo {
+    font-weight: 500;
+}
+
+.nota-campo {
+    padding: 0.5rem;
+    background-color: #655e6d;
+    border: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1rem;
+    color: white;
+}
+
+.nota-campo::placeholder {
+    color: white;
+    opacity: 50%;
+}
+
+#conteudo {
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 150px;
+    overflow: auto;
+}
+
+.botao-submit {
+    align-self: center;
+    margin-top: 2rem;
+    padding: 0.48rem 0.65rem;
+    border-radius: 100%;
+    border: none;
+    background-color: #EAE509;
+}
+
+.bi-plus-circle-dotted {
+    font-size: 2rem;
+}

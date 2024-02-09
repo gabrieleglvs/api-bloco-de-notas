@@ -1,0 +1,44 @@
+.notas h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: "Days One", sans-serif;
+}
+
+.notas-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nota-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f8e559;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.nota-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.nota-card p {
+    line-height: 1.5rem;
+}
+
+.nota-botoes {
+    align-self: end;
+}
+
+.nota-botoes button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+.bi-pencil-square, .bi-trash3-fill {
+    font-size: 1.2rem;
+}
