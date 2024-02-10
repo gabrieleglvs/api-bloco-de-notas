@@ -11,13 +11,14 @@
 header {
     background-color: #332941;
     padding-top: 2rem;
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 h1 {
     font-family: "Days One", sans-serif;
     font-weight: 400;
     color: white;
+    margin-bottom: 0.5rem;
 }
 
 body {
@@ -28,4 +29,24 @@ body {
 main {
     flex: 1;
     padding: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        padding-left: 4rem;
+    }
+
+    main {
+        padding: 4rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    header {
+        padding-left: 5rem;
+    }
+
+    main {
+        padding: 5rem;
+    }
 }
