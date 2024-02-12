@@ -60,7 +60,7 @@ $ npm install
 ### 6º Por fim, (ainda na pasta 'backend') rode o comando abaixo para iniciar a aplicação e abra o arquivo 'index.html' no navegador.
 
 ```bash
-#Command to start the server.
+#Comando para iniciar o servidor.
 
 $ npm run dev
 ```
