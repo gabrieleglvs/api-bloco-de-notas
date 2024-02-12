@@ -1,8 +1,13 @@
 # Bloco de notas
 
-## Este projeto ainda está em desenvolvimento :construction:
+## Este projeto continua em constante desenvolvimento :construction:
 
-Consiste em uma aplicação Full Stack com objetivo de gerenciar anotações.
+Consiste em uma aplicação Full Stack responsiva com objetivo de gerenciar anotações.
+
+<br>
+ <img align="center" src="backend/src/assets/img/tela-inicial-desktop.png" />
+
+<br>
 
 # Tecnologias utilizadas
 
@@ -12,12 +17,14 @@ Consiste em uma aplicação Full Stack com objetivo de gerenciar anotações.
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
 ## Frontend
-Em desenvolvimento :construction:
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ## Database
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-# Como usar (apenas backend)
+# Como rodar o projeto
 
 ### 1º É necessario clonar ou fazer download do repositório.
 
@@ -50,7 +57,7 @@ DB_CONNECTION_STRING= [String de conexão]
 $ npm install
 ```
 
-### 6º Por fim, (ainda na pasta 'backend') rode o comando abaixo para iniciar a aplicação:
+### 6º Por fim, (ainda na pasta 'backend') rode o comando abaixo para iniciar a aplicação e abra o arquivo 'index.html' no navegador.
 
 ```bash
 #Command to start the server.
