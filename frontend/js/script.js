@@ -1,14 +1,12 @@
+import { buscarNotas } from "../servicos/notasService.js";
+import { adicionarNota } from "../servicos/notasService.js";
+import { deletarNota } from "../servicos/notasService.js";
+import { atualizarNota } from "../servicos/notasService.js";
+
 const tituloNotaInput = document.querySelector('#titulo');
 const conteudoNotaInput = document.querySelector('#conteudo');
 const formAddNota = document.querySelector('.form-add-nova-nota');
 const muralCardNotas = document.querySelector('.notas-card');
-
-//GET
-const buscarNotas = async () => {
-    const resposta = await fetch('http://localhost:5000/nota')
-    const notas = await resposta.json();
-    return notas;
-}
 
 const criarElemento = (tag, innerText = '', innerHTML = '', value = '') => {
     const elemento = document.createElement(tag);
@@ -86,8 +84,15 @@ const criarCardNota = ({_id, titulo, conteudo}) => {
         cardDivNotaBotoes.appendChild(cardCancelarBotao);
 
         //AÇÃO - Botão SALVAR
-        cardSalvarBotao.addEventListener('click', () => {
-            atualizarNota(_id, cardInputTitulo.value, cardInputConteudo.value);
+        cardSalvarBotao.addEventListener('click', async () => {
+            const nota = {
+                _id,
+                titulo: cardInputTitulo.value,
+                conteudo: cardInputConteudo.value
+            }
+
+            await atualizarNota(nota);
+            carregarNotas();
         })
 
         //AÇÃO - Botão CANCELAR
@@ -97,8 +102,9 @@ const criarCardNota = ({_id, titulo, conteudo}) => {
     })
 
     //AÇÃO - Botão DELETE
-    cardDeletarBotao.addEventListener('click', () => {
-        deletarNota(_id);
+    cardDeletarBotao.addEventListener('click', async () => {
+        await deletarNota(_id);
+        carregarNotas();
     })
 
     //-----------------
@@ -107,6 +113,11 @@ const criarCardNota = ({_id, titulo, conteudo}) => {
     card.appendChild(cardDivNotaBotoes);
 
     return card;
+}
+
+const limparFormulario = () => {
+    tituloNotaInput.value = '';
+    conteudoNotaInput.value = '';
 }
 
 const carregarNotas = async () => {
@@ -121,56 +132,19 @@ const carregarNotas = async () => {
         muralCardNotas.appendChild(cardNota)
     });    
 }
-carregarNotas();
 
-
-//POST
-const adicionarNota = async (event) => {
-    event.preventDefault();
+formAddNota.addEventListener('submit', async (event) => {
 
     const nota = {
         titulo: tituloNotaInput.value,
         conteudo: conteudoNotaInput.value
     }
 
-    await fetch('http://localhost:5000/nota', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(nota),
-    })
-
+    await adicionarNota(event, nota);
     carregarNotas();
-    tituloNotaInput.value = '';
-    conteudoNotaInput.value = '';
-}
-
-formAddNota.addEventListener('submit', (event) => {
-    adicionarNota(event);
+    limparFormulario();
 })
 
-//DELETE
-const deletarNota = async (id) => {
-    await fetch(`http://localhost:5000/nota/${id}`, {
-        method: 'delete',
-    });
+carregarNotas();
 
-    carregarNotas();
-}
 
-//PUT
-const atualizarNota = async (_id, titulo, conteudo) => {
-
-    const nota = {
-        _id,
-        titulo,
-        conteudo
-    }
-    
-    await fetch(`http://localhost:5000/nota/${_id}`, {
-        method: 'put',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(nota)
-    });
-
-    carregarNotas();
-}
