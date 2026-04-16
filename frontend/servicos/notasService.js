@@ -1,6 +1,6 @@
 //GET
 export const buscarNotas = async () => {
-    const resposta = await fetch('http://localhost:5000/nota')
+    const resposta = await fetch('https://bloco-de-notas-backend.onrender.com/nota')
     const notas = await resposta.json();
     return notas;
 }
@@ -9,7 +9,7 @@ export const buscarNotas = async () => {
 export const adicionarNota = async (event, nota) => {
     event.preventDefault();
 
-    await fetch('http://localhost:5000/nota', {
+    await fetch('https://bloco-de-notas-backend.onrender.com/nota', {
         method: 'post',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(nota),
@@ -18,7 +18,7 @@ export const adicionarNota = async (event, nota) => {
 
 //DELETE
 export const deletarNota = async (id) => {
-    await fetch(`http://localhost:5000/nota/${id}`, {
+    await fetch(`https://bloco-de-notas-backend.onrender.com/nota/${id}`, {
         method: 'delete',
     });
 }
@@ -26,7 +26,7 @@ export const deletarNota = async (id) => {
 //PUT
 export const atualizarNota = async (nota) => {
     
-    await fetch(`http://localhost:5000/nota/${nota._id}`, {
+    await fetch(`https://bloco-de-notas-backend.onrender.com/nota/${nota._id}`, {
         method: 'put',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(nota)
