@@ -82,3 +82,10 @@
         margin-right: 6rem;
     }
 }
+
+@media only screen and (min-width: 1800px) {
+    .form-add-nova-nota {
+        margin-left: 24rem;
+        margin-right: 24rem;
+    }
+}
